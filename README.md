@@ -4,13 +4,13 @@ A text to speech assitant made in python using pyttsx3 and datetime modules.
 import pyttsx3
 import datetime
 
-#Importing the voice function from 'pyttsx3' into a variable named 'engine'
+# Importing the voice function from 'pyttsx3' into a variable named 'engine'
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
 print(voices[1].id)
 engine.setProperty('voice',voices[1].id)
 
-#Define a function named 'speak' for converting the text into speech
+# Define a function named 'speak' for converting the text into speech
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -31,7 +31,7 @@ if password=="thursday":
         engine.runAndWait()
     speak("This is Thursday ")
     speak("What can I help you with")
-#Using a while loop create a loop so that your assistant does not stop after completing the task
+# Using a while loop create a loop so that your assistant does not stop after completing the task
     while True:
 # Ask the user what task he would like assistant to do for him/her
         speak("select task from below")
@@ -45,7 +45,7 @@ if password=="thursday":
         time_now = float(datetime.datetime.now().hour)
 # Using If statement perform the desired task the user would like assistant to perform
 
-#If the user selects the task to know the time , use datetime module to get the time and greet the user accordingly
+# If the user selects the task to know the time , use datetime module to get the time and greet the user accordingly
         if work==1:
             speak("the time is")
             speak(time_now)
@@ -57,15 +57,15 @@ if password=="thursday":
                 speak("Good Evening!")
             if hour >= 20 and hour < 25:
                 speak("Good Night!")
-
-#If the user selects the task to know the date , by using datetime module tell the user todays'date
+ 
+# If the user selects the task to know the date , by using datetime module tell the user todays'date
         if work==2:
             speak(day)
 
-#If the user selects the task to use calculator, perform simple calculation using a basic calculator program to perform basic operations
+# If the user selects the task to use calculator, perform simple calculation using a basic calculator program to perform basic operations
         if work==3:
 
-#Define 'add','subtract','multiply','division' to recall these function according to users choice of operation
+# Define 'add','subtract','multiply','division' to recall these function according to users choice of operation
             def add(x, y):
                 return x + y
             def subtract(x, y):
